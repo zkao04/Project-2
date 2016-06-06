@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  breakfast_description: MyString
+  breakfast: 1
+  lunch_description: MyString
+  lunch: 1
+  dinner_description: MyString
+  dinner: 1
+  snack_description: MyString
+  snack: 1
+  user_id: 
+
+two:
+  breakfast_description: MyString
+  breakfast: 1
+  lunch_description: MyString
+  lunch: 1
+  dinner_description: MyString
+  dinner: 1
+  snack_description: MyString
+  snack: 1
+  user_id: 
