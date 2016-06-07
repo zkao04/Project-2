@@ -1,20 +1,20 @@
 class CalorieIntakesController < ApplicationController
-before_action :authorize
+# before_action :authorize
 
 def index
   @calorieIntakes = CalorieIntakes.all
 end
 
 def show
-  @calorieIntakes = CalorieIntakes.find(params[:id])
+  @calorieIntakes = CalorieIntake.find(params[:id])
 end
 
 def new
-  @calorieIntakes = CalorieIntakes.new
+  @calorieIntakes = CalorieIntake.new
 end
 
 def create
-  @calorieIntakes = CalorieIntakes.new(blurb_params)
+  @calorieIntakes = CalorieIntake.new(blurb_params)
   @calorieIntakes.user = current_user
   if @calorieIntakes.save
     redirect_to blurb_path(@calorieIntakes)
@@ -33,7 +33,7 @@ def destroy
 end
 
 private
-def blurb_params
-  params.require(:blurb).permit(:title, :body)
+def calorieIntakes_params
+  params.require(:calorieIntakes).permit(:title, :body)
 end
 end

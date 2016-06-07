@@ -3,12 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by({email: params[:email]})
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.# IDEA:
-      redirect_to_user_path(@user)
+      session[:user_id] = @user.id
+      flash[:success] = "Success"
+      redirect_to root_path
     else
-      redirect_to_new_session_path
+      flash[:failure] = "hello"
+      redirect_to new_session_path
     end
   end
 
