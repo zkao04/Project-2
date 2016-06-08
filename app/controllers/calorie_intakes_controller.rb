@@ -6,27 +6,35 @@ def index
 end
 
 def show
-  @calorieIntakes = CalorieIntake.find(params[:id])
+  @CalorieIntake = CalorieIntake.find(params[:id])
 end
 
 def new
-  @calorieIntakes = CalorieIntake.new
+  @calorieIntake = CalorieIntake.new
 end
 
 def create
-  @calorieIntakes = CalorieIntake.new(blurb_params)
-  @calorieIntakes.user = current_user
-  if @calorieIntakes.save
-    redirect_to blurb_path(@calorieIntakes)
+  @calorieIntake = CalorieIntake.new(user_params)
+  @calorieIntake.user = current_user
+  if @calorieIntake.save
+    redirect_to calorie_intakes_path(@calorieIntake)
   else
-    redirect_to new_blurb_path
+    redirect_to new_calorie_intakes_path
   end
 end
 
 def edit
+  @calorieIntake = CalorieIntake.find(params[:id])
 end
 
 def update
+  @calorieIntake = CalorieIntake.find(params[:id])
+    # if @calorieIntake.update_attributes(calorieIntakes_params)
+    #   flash[:success] = "CalorieIntake"
+    #   redirect_to calorieIntakes_path(@calorieIntake)
+    # else
+    #   redirect_to calorieIntakes_path
+    # end
 end
 
 def destroy
@@ -34,6 +42,6 @@ end
 
 private
 def calorieIntakes_params
-  params.require(:calorieIntakes).permit(:title, :body)
+  params.permit(:breakfast_description, :breakfast, :lunch_description, :lunch, :dinner_description, :dinner, :snack_description, :snack)
 end
 end

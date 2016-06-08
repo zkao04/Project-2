@@ -1,2 +1,64 @@
-<h1>CalorieIntakes#edit</h1>
-<p>Find me in app/views/calorie_intakes/edit.html.erb</p>
+<%= form_for @calorieIntake, :html => {class: 'current_user form-horizontal'} do |f| %>
+    <div class="row"><legend class="col-md-4 col-md-offset-4">Today:</legend></div>
+    <fieldset>
+        <div class="form-group">
+            <%= f.label :breakfast_description, 'Breakfast Description*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :breakfast_description, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :breakfast, 'Breakfast*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.number_field :breakfast, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :lunch_description, 'Lunch Description*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :lunch_description, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :lunch, 'Lunch*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.number_field :lunch, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :dinner_description, 'Dinner Description*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :dinner_description, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :dinner, 'Dinner*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :dinner, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :snack_description, 'Snack Description*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= text_field :snack_description, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :snack, 'Snack*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= text_field :snack, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-4">
+                <%= f.submit 'Submit', class: 'btn btn-success' %>
+            </div>
+        </div>
+    </fieldset>
+<% end %>

@@ -2,3 +2,10 @@
 <h2>Height: <%= @user.height %></h2>
 <h2>Weight: <%= @user.weight %></h2>
 <h2>BMR: <%= @bmr %></h2>
+<h3>Calorie Intakes:</h3>
+<ul>
+  <% @user.calorie_intakes.each do |c| %>
+  <li>Total calorie for the day: <%= (c.breakfast) + (c.lunch) + (c.dinner) + (c.snack) %></li>
+  <%= link_to 'Edit', edit_calorie_intake_path(c) %>
+  <%end%>
+</ul>
