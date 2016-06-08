@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
-
   root 'users#index'
-
   resources :users
-  resources :calorie_intakes
 
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create]
