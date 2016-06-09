@@ -6,25 +6,25 @@ def index
 end
 
 def show
-  @CalorieIntake = CalorieIntake.find(params[:id])
+  @CalorieIntakes = CalorieIntake.find(params[:id])
 end
 
 def new
-  @calorieIntake = CalorieIntake.new
+  @calorieIntakes = CalorieIntake.new
 end
 
 def create
-  @calorieIntake = CalorieIntake.new(user_params)
-  @calorieIntake.user = current_user
-  if @calorieIntake.save
-    redirect_to calorie_intakes_path(@calorieIntake)
+  @calorieIntakes = CalorieIntake.new(user_params)
+  @calorieIntakes.user = current_user
+  if @calorieIntakes.save
+    redirect_to calorie_intakes_path(@calorieIntakes)
   else
     redirect_to new_calorie_intakes_path
   end
 end
 
 def edit
-  @calorieIntake = CalorieIntake.find(params[:id])
+  @calorieIntakes = CalorieIntake.find(params[:id])
 end
 
 def update
