@@ -15,7 +15,17 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ // *= require 'masonry/basic'
+ // *= require 'masonry/centered'
+ // *= require 'masonry/fluid'
+ // *= require 'masonry/gutters'
+ // *= require 'masonry/infinitescroll'
+ // *= require 'masonry/right-to-left'
+ // *= require 'masonry/transitions'
+ .navbar{
+   background-image: linear-gradient(#00A3FF, #0D68FF);
+ }
 
- .navbar {
-   
+ .nav{
+   color: white;
  }

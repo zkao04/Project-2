@@ -31,6 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'gravatar-ultimate'
 # url = Gravatar.new("generic@example.com").image_url
 
+gem 'masonry-rails', '~> 0.2.4'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
