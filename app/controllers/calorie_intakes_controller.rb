@@ -2,7 +2,7 @@ class CalorieIntakesController < ApplicationController
 # before_action :authorize
 
 def index
-  @calorieIntakes = CalorieIntakes.all
+  @calorieIntakes = CalorieIntake.all
 end
 
 def show
@@ -14,17 +14,17 @@ def new
 end
 
 def create
-  @calorieIntakes = CalorieIntake.new(user_params)
+  @calorieIntakes = CalorieIntake.new(calorieIntakes_params)
   @calorieIntakes.user = current_user
   if @calorieIntakes.save
-    redirect_to calorie_intakes_path(@calorieIntake)
+    redirect_to user_path(current_user)
   else
-    redirect_to new_calorie_intakes_path
+    redirect_to new_calorie_intake_path
   end
 end
 
 def edit
-  @calorieIntakes = CalorieIntake.find(params[:id])
+  @calorieIntake = CalorieIntake.find(params[:id])
 end
 
 def update
@@ -32,7 +32,7 @@ def update
     @calorieIntakes = CalorieIntake.find(params[:id])
     if @calorieIntakes.update_attributes(calorieIntakes_params)
       flash[:success] = "CalorieIntake"
-      redirect_to calorieIntakes_path(@calorieIntake)
+      redirect_to user_path(current_user)
     else
       redirect_to calorieIntakes_path
     end
@@ -42,7 +42,7 @@ def destroy
 end
 
 private
-def calorieIntakes_params
-  params.require(:calorieIntake).permit(:breakfast_description, :breakfast, :lunch_description, :lunch, :dinner_description, :dinner, :snack_description, :snack)
-end
+  def calorieIntakes_params
+    params.require(:calorie_intake).permit(:date, :breakfast_description, :breakfast, :lunch_description, :lunch, :dinner_description, :dinner, :snack_description, :snack)
+  end
 end

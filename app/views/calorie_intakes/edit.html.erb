@@ -2,6 +2,24 @@
     <div class="row"><legend class="col-md-4 col-md-offset-4">Today:</legend></div>
     <fieldset>
         <div class="form-group">
+            <%= f.label :date, 'Date*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <div class='input-group date' id='datetimepicker1'>
+                    <%= f.text_field :date, class: 'form-control' %>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        var date = $('#datetimepicker1 input').val()
+                        $('#datetimepicker1').datetimepicker();
+                        $('#datetimepicker1 input').val(date)
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="form-group">
             <%= f.label :breakfast_description, 'Breakfast Description*', class: 'col-md-4 control-label' %>
             <div class="col-md-5">
                 <%= f.text_field :breakfast_description, class: 'form-control' %>
