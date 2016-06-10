@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'users#index'
   resources :users
+  # get 'users/new' => 'users#new', as: :new_users
+  # get 'users/:id' => 'users#show', as: :user
   resources :calorie_intakes
 
   delete '/logout' => 'sessions#destroy', as: :logout
