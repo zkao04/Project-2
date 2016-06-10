@@ -7,7 +7,7 @@
 YourFitnessPal is a web app designed to allow users to manage their calorie intake according to their BMR(Basic Metabolism Rate).
 
 ##Screenshot
-![Screen Shot](/Users/hineskao/GA_workspace/Project2/your_fitness_app/app/assets/images/Main Page.jpg)
+![Screen Shot](app/assets/images/Main Page.jpg)
 
 
 ##Technologies Used
