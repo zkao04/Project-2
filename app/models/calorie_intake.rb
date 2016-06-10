@@ -1,7 +1,7 @@
 class CalorieIntake < ActiveRecord::Base
   before_save :default_values
   belongs_to :user
-
+  validates :date, presence: true
 
   def default_values
     self.breakfast ||= 0
