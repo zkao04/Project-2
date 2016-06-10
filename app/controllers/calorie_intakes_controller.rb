@@ -25,6 +25,7 @@ end
 
 def edit
   @calorieIntake = CalorieIntake.find(params[:id])
+  @calorieIntake.date = @calorieIntake.date.strftime("%m/%d/%Y")
 end
 
 def update

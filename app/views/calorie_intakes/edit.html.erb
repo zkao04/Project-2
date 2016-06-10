@@ -13,7 +13,9 @@
                 <script type="text/javascript">
                     $(function () {
                         var date = $('#datetimepicker1 input').val()
-                        $('#datetimepicker1').datetimepicker();
+                        $('#datetimepicker1').datetimepicker({
+                          format: 'DD/MM/YYYY'
+                        });
                         $('#datetimepicker1 input').val(date)
                     });
                 </script>
