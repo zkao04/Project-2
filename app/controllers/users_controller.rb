@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user.email = @user.email.downcase
     if @user.save
       redirect_to new_session_path
+    end
   end
 
   def edit
